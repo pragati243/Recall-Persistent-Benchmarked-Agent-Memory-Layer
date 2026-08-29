@@ -12,7 +12,7 @@ Building in phases (see spec, §7).
 - [x] Phase 1 — vector-only memory add/retrieve (Qdrant + FastEmbed)
 - [x] Phase 2 — graph layer + entity linking
 - [x] Phase 3 — contradiction handling
-- [ ] Phase 4 — demo agent integration
+- [x] Phase 4 — demo agent integration
 - [ ] Phase 5 — benchmark harness
 - [ ] Phase 6 — Docker Compose + polish
 
@@ -58,6 +58,30 @@ traverses current facts but the full history stays queryable via `/memory/audit/
 Matching is on the exact normalized relation string extracted by the LLM — a known
 limitation if the same kind of fact gets extracted under inconsistent relation labels
 across sessions.
+
+## Phase 4 — Demo agent
+
+A LangGraph agent (`demo_agent/graph.py`): personal assistant that schedules tasks and
+remembers preferences. Two nodes — `retrieve` (once, at session start) → `chat`
+(once per turn). `add_memory` is called once, at session end, from the CLI driver,
+not from the graph — matching the spec's read-at-start/write-at-end lifecycle rather
+than live mid-conversation memory writes.
+
+```bash
+docker compose up -d --wait neo4j postgres
+uv sync
+uv run python -m demo_agent.run_session
+```
+
+Try a two-session flow manually: tell it a preference, `exit`, run it again as the
+same user id, and ask about that preference — it should come back in the retrieved
+context.
+
+**Note:** Qdrant's local (embedded) mode locks its storage file to one process at a
+time — don't run `run_session.py`, `uvicorn`, and the sanity scripts against the same
+`.data/qdrant` path concurrently, or you'll hit `RuntimeError: Storage folder ...
+already accessed`. Phase 6 moves Qdrant to server mode in Docker Compose, which
+removes this restriction.
 
 ## Tests
 

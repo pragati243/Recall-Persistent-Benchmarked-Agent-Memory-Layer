@@ -1,7 +1,7 @@
-from anthropic import Anthropic
 from pydantic import BaseModel
 
 from .config import settings
+from .llm import get_client
 
 _TOOL = {
     "name": "record_entities",
@@ -54,18 +54,8 @@ class ExtractionResult(BaseModel):
     relationships: list[ExtractedRelationship]
 
 
-_client: Anthropic | None = None
-
-
-def _get_client() -> Anthropic:
-    global _client
-    if _client is None:
-        _client = Anthropic(api_key=settings.anthropic_api_key)
-    return _client
-
-
 def extract(text: str) -> ExtractionResult:
-    response = _get_client().messages.create(
+    response = get_client().messages.create(
         model=settings.extraction_model,
         max_tokens=512,
         tools=[_TOOL],

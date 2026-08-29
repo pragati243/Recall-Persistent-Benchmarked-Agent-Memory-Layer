@@ -14,6 +14,7 @@ class Settings(BaseSettings):
 
     anthropic_api_key: str = ""
     extraction_model: str = "claude-haiku-4-5-20251001"
+    agent_model: str = "claude-sonnet-5"
 
     postgres_dsn: str = "postgresql://recall:recall-dev-password@localhost:5432/recall"
 
