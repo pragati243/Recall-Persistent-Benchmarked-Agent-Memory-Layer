@@ -14,3 +14,14 @@ class MemoryRecord(BaseModel):
     user_id: str
     created_at: str
     score: float | None = None
+
+
+class GraphNeighbor(BaseModel):
+    name: str
+    type: str
+
+
+class RetrievalResult(BaseModel):
+    mode: str
+    vector_results: list[MemoryRecord]
+    graph_results: list[GraphNeighbor]

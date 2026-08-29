@@ -8,5 +8,12 @@ class Settings(BaseSettings):
     qdrant_collection: str = "memories"
     embedding_model: str = "BAAI/bge-small-en-v1.5"
 
+    neo4j_uri: str = "bolt://localhost:7687"
+    neo4j_user: str = "neo4j"
+    neo4j_password: str = "recall-dev-password"
+
+    anthropic_api_key: str = ""
+    extraction_model: str = "claude-haiku-4-5-20251001"
+
 
 settings = Settings()
