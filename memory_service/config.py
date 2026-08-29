@@ -15,5 +15,7 @@ class Settings(BaseSettings):
     anthropic_api_key: str = ""
     extraction_model: str = "claude-haiku-4-5-20251001"
 
+    postgres_dsn: str = "postgresql://recall:recall-dev-password@localhost:5432/recall"
+
 
 settings = Settings()

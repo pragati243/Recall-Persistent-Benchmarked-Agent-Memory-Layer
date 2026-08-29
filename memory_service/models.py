@@ -1,3 +1,6 @@
+from datetime import datetime
+from uuid import UUID
+
 from pydantic import BaseModel
 
 
@@ -25,3 +28,16 @@ class RetrievalResult(BaseModel):
     mode: str
     vector_results: list[MemoryRecord]
     graph_results: list[GraphNeighbor]
+
+
+class AuditEntry(BaseModel):
+    id: UUID
+    entity_key: str
+    entity_name: str
+    relation: str
+    target_key: str
+    target_name: str
+    memory_id: str
+    created_at: datetime
+    superseded_at: datetime | None = None
+    superseded_by_memory_id: str | None = None

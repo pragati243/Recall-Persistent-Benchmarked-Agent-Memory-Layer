@@ -14,5 +14,22 @@ services:
       timeout: 5s
       retries: 20
 
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: recall
+      POSTGRES_PASSWORD: recall-dev-password
+      POSTGRES_DB: recall
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recall"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
 volumes:
   neo4j_data:
+  postgres_data:

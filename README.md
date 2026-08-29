@@ -11,7 +11,7 @@ Building in phases (see spec, §7).
 
 - [x] Phase 1 — vector-only memory add/retrieve (Qdrant + FastEmbed)
 - [x] Phase 2 — graph layer + entity linking
-- [ ] Phase 3 — contradiction handling
+- [x] Phase 3 — contradiction handling
 - [ ] Phase 4 — demo agent integration
 - [ ] Phase 5 — benchmark harness
 - [ ] Phase 6 — Docker Compose + polish
@@ -39,6 +39,25 @@ uv run python scripts/sanity_check_graph.py   # graph vs. vector-only, side by s
 Entity linking (dedup) is a deliberately simple v1 policy: exact match on normalized
 name per user, enforced via a Neo4j `MERGE`. Synonym/pronoun resolution ("the user's
 project" == "Atlas") is a known limitation — see Production Considerations (Phase 6).
+
+## Phase 3 — Contradiction handling
+
+Requires Postgres in addition to Neo4j + an Anthropic key.
+
+```bash
+docker compose up -d --wait neo4j postgres
+uv sync
+uv run python scripts/sanity_check_contradiction.py
+uv run uvicorn memory_service.main:app --reload   # GET /memory/audit/{entity}
+```
+
+Policy (spec §6.3): a new fact supersedes an older one about the same (entity, relation)
+if it points at a different target. The old fact is never deleted — `superseded_at` is
+set in both the Postgres audit trail and the Neo4j edge, so retrieval only ever
+traverses current facts but the full history stays queryable via `/memory/audit/{entity}`.
+Matching is on the exact normalized relation string extracted by the LLM — a known
+limitation if the same kind of fact gets extracted under inconsistent relation labels
+across sessions.
 
 ## Tests
 

@@ -1,3 +1,4 @@
+from . import contradiction
 from .entity_extraction import extract
 from .graph_store import graph_store
 from .models import MemoryCreate, MemoryRecord
@@ -20,8 +21,14 @@ def add_memory(memory: MemoryCreate) -> MemoryRecord:
         return keys[name]
 
     for rel in extraction.relationships:
-        graph_store.upsert_relationship(
-            memory.user_id, _key_for(rel.source), _key_for(rel.target), rel.relation, record.id
+        contradiction.apply(
+            user_id=memory.user_id,
+            source_key=_key_for(rel.source),
+            source_name=rel.source,
+            relation=rel.relation,
+            target_key=_key_for(rel.target),
+            target_name=rel.target,
+            memory_id=record.id,
         )
 
     return record
