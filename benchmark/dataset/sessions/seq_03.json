@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_03",
+  "category": "simple_recall",
+  "sessions": [
+    {"session_id": "s1", "text": "The user's favorite color is teal."},
+    {"session_id": "s2", "text": "The user just started learning to play the guitar."},
+    {"session_id": "s3", "text": "The user drinks black coffee every morning."}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_02",
+  "category": "simple_recall",
+  "sessions": [
+    {"session_id": "s1", "text": "The user is allergic to peanuts."},
+    {"session_id": "s2", "text": "The user works remotely from Berlin."},
+    {"session_id": "s3", "text": "The user's dog is named Biscuit."}
+  ]
+}

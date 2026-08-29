@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_10",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "Maria is assigned to the Orion project."},
+    {"session_id": "s2", "text": "The Orion project covers the mobile app rewrite."},
+    {"session_id": "s3", "text": "Maria has been reassigned from Orion to the Zenith project."}
+  ]
+}

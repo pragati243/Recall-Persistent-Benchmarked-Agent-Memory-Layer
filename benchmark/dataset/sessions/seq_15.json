@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_15",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "The Nimbus project is owned by the Platform group."},
+    {"session_id": "s2", "text": "The Platform group is based in the Chicago office."},
+    {"session_id": "s3", "text": "Elena works in the Platform group."}
+  ]
+}

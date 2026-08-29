@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_18",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "Jordan is the on-call engineer for the Billing service."},
+    {"session_id": "s2", "text": "The Billing service is part of the Payments platform."},
+    {"session_id": "s3", "text": "The Payments platform had an incident last week."}
+  ]
+}

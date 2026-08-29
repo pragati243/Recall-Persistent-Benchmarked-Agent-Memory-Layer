@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_12",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "The user works from the New York office."},
+    {"session_id": "s2", "text": "The user's badge access was renewed in January."},
+    {"session_id": "s3", "text": "The user has relocated and now works from the Denver office."}
+  ]
+}

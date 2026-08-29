@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_16",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "Omar is the tech lead for the Comet project."},
+    {"session_id": "s2", "text": "The Comet project depends on the Aurora library."},
+    {"session_id": "s3", "text": "The Aurora library was written by the Infra team."}
+  ]
+}

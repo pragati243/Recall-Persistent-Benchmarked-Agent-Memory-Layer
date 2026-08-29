@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_01",
+  "category": "simple_recall",
+  "sessions": [
+    {"session_id": "s1", "text": "The user's favorite programming language is Python."},
+    {"session_id": "s2", "text": "The user mentioned they enjoy hiking on weekends."},
+    {"session_id": "s3", "text": "The user is planning a trip to Japan next spring."}
+  ]
+}

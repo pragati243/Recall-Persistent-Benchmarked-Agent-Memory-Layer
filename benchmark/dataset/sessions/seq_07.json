@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_07",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "The user prefers email notifications."},
+    {"session_id": "s2", "text": "The user asked for a weekly summary of tasks."},
+    {"session_id": "s3", "text": "The user now prefers SMS notifications instead of email."}
+  ]
+}

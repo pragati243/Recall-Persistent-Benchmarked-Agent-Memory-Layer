@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_09",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "The Nimbus project deadline is set for March 1st."},
+    {"session_id": "s2", "text": "The user asked for reminders three days before deadlines."},
+    {"session_id": "s3", "text": "The Nimbus project deadline has been moved to April 15th."}
+  ]
+}

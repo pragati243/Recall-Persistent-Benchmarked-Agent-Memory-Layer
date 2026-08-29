@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_04",
+  "category": "simple_recall",
+  "sessions": [
+    {"session_id": "s1", "text": "The user lives in Austin, Texas."},
+    {"session_id": "s2", "text": "The user is reading a book about ancient Rome."},
+    {"session_id": "s3", "text": "The user's favorite movie genre is science fiction."}
+  ]
+}

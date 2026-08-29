@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_17",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "Priya is the sponsor of the Vega initiative."},
+    {"session_id": "s2", "text": "The Vega initiative is run by the Growth team."},
+    {"session_id": "s3", "text": "The Growth team meets every Monday."}
+  ]
+}

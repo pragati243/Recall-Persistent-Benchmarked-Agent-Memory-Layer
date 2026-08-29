@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_14",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "Lena is the manager of the Falcon team."},
+    {"session_id": "s2", "text": "Tom is a member of the Falcon team."},
+    {"session_id": "s3", "text": "The Falcon team is responsible for the payments service."}
+  ]
+}

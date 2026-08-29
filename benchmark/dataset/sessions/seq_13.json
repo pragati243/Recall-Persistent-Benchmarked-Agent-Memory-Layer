@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_13",
+  "category": "multi_hop",
+  "sessions": [
+    {"session_id": "s1", "text": "Sarah manages the Atlas project."},
+    {"session_id": "s2", "text": "Raj is the tech lead on the Atlas project."},
+    {"session_id": "s3", "text": "Atlas is expected to ship in November."}
+  ]
+}

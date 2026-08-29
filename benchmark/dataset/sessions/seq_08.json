@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_08",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "The user prefers morning meetings."},
+    {"session_id": "s2", "text": "The user is working on a project called Nimbus."},
+    {"session_id": "s3", "text": "The user now prefers afternoon meetings instead of mornings."}
+  ]
+}

@@ -1,0 +1,19 @@
+sequence_id,category,question,expected_answer,stale_answer,depends_on_sessions
+seq_01,simple_recall,What programming language does the user like best?,Python,,s1
+seq_02,simple_recall,What food allergy does the user have?,peanuts,,s1
+seq_03,simple_recall,What is the user's favorite color?,teal,,s1
+seq_04,simple_recall,Which city does the user live in?,Austin,,s1
+seq_05,simple_recall,What is the name of the user's pet?,Max,,s1
+seq_06,simple_recall,What is the user's job?,backend engineer,,s1
+seq_07,contradiction,How does the user currently want to be notified?,SMS,email,s1;s3
+seq_08,contradiction,When does the user prefer to have meetings?,afternoon,morning,s1;s3
+seq_09,contradiction,When is the Nimbus project deadline?,April 15,March 1,s1;s3
+seq_10,contradiction,Which project is Maria currently assigned to?,Zenith,Orion,s1;s3
+seq_11,contradiction,What diet does the user currently follow?,vegan,vegetarian,s1;s3
+seq_12,contradiction,Which office does the user currently work from?,Denver,New York,s1;s3
+seq_13,multi_hop,Who does Raj report to?,Sarah,,s1;s2
+seq_14,multi_hop,Who is Tom's manager?,Lena,,s1;s2
+seq_15,multi_hop,Which office is the Nimbus project associated with?,Chicago,,s1;s2
+seq_16,multi_hop,Which library does Omar's project depend on?,Aurora,,s1;s2
+seq_17,multi_hop,Which team runs the initiative sponsored by Priya?,Growth,,s1;s2
+seq_18,multi_hop,Which platform is Jordan's service part of?,Payments,,s1;s2

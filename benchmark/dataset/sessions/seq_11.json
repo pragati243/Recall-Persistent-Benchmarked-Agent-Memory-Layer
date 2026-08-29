@@ -1,0 +1,9 @@
+{
+  "sequence_id": "seq_11",
+  "category": "contradiction",
+  "sessions": [
+    {"session_id": "s1", "text": "The user follows a vegetarian diet."},
+    {"session_id": "s2", "text": "The user likes trying new restaurants on weekends."},
+    {"session_id": "s3", "text": "The user has switched to a vegan diet."}
+  ]
+}
