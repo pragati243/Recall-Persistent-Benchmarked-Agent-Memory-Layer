@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     qdrant_path: str = "./.data/qdrant"
+    qdrant_url: str = ""  # set to use a Qdrant server (e.g. Docker) instead of local-file mode
     qdrant_collection: str = "memories"
     embedding_model: str = "BAAI/bge-small-en-v1.5"
 

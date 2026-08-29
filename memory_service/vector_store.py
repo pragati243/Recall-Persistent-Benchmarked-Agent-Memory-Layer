@@ -8,10 +8,18 @@ from .models import MemoryCreate, MemoryRecord
 
 
 class VectorStore:
-    """Thin wrapper around Qdrant's local-inference API (FastEmbed under the hood)."""
+    """Thin wrapper around Qdrant's local-inference API (FastEmbed under the hood).
+
+    Local-file mode (default) needs no server and is what every phase so far has
+    run against, but it locks its storage file to one process. Setting QDRANT_URL
+    switches to server mode - what docker-compose's `api` service uses - which
+    supports concurrent access."""
 
     def __init__(self) -> None:
-        self._client = QdrantClient(path=settings.qdrant_path)
+        if settings.qdrant_url:
+            self._client = QdrantClient(url=settings.qdrant_url)
+        else:
+            self._client = QdrantClient(path=settings.qdrant_path)
         self._model = settings.embedding_model
         if not self._client.collection_exists(settings.qdrant_collection):
             self._client.create_collection(
