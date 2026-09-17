@@ -201,8 +201,3 @@ Docker Compose for one-command local run. README with the architecture diagram, 
 - Demonstrated contradiction handling: a concrete before/after example showing an outdated fact being correctly superseded, with the audit trail intact
 - `report.md` with REAL numbers (not placeholders) from your own benchmark dataset, broken down by category, with honest interpretation of where the system underperforms
 - Entire thing runs via `docker-compose up` + a single benchmark command — reproducible for someone else to verify
-
-## 9. What to tell Claude Code first
-
-Paste this whole document, then add:
-> "Start with Phase 1 only — vector-only memory add/retrieve, tested with a simple script. Confirm it works before we add the graph layer."
