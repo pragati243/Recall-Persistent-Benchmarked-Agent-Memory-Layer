@@ -9,7 +9,7 @@ from memory_service.models import MemoryCreate
 from memory_service.retrieval_router import retrieval_router
 
 USER = "phase3-demo-user"
-ENTITY = "the user"  # depends on how the LLM names the subject entity — see README caveat
+ENTITY = "user"  # normalized entity name produced by the extraction schema
 
 MEMORIES = [
     ("The user prefers email notifications.", "s1"),

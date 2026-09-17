@@ -93,9 +93,9 @@ Separate, standalone module (the KEY deliverable):
 | Memory API service | FastAPI (Python) | Simple, well-suited to wrapping vector/graph clients |
 | Vector store | Qdrant or ChromaDB | Already in your skillset; semantic similarity retrieval layer |
 | Graph store | Neo4j | Already in your skillset; entity/relationship retrieval layer |
-| Entity extraction | LLM-based structured extraction (Claude API) during `add_memory()` | Extract entities + relationships from each new memory, similar to how modern memory frameworks (e.g., Mem0-style entity linking) work — this is the piece that makes retrieval relationship-aware, not just similarity-based |
+| Entity extraction | Groq API (`openai/gpt-oss-120b`) structured extraction during `add_memory()` | Project substitution for the original Claude API: extracts entities + relationships from each new memory, similar to how modern memory frameworks (e.g., Mem0-style entity linking) work — this is the piece that makes retrieval relationship-aware, not just similarity-based |
 | Agent orchestration | LangGraph | Already your primary agent framework (reused from Praxis) |
-| Demo agent LLM | Anthropic Claude API | Consistent with the rest of your stack |
+| Demo agent LLM | Groq API (`openai/gpt-oss-120b`) | Project substitution for the original Anthropic Claude API; consistent with the rest of the implemented stack |
 | Relational storage | PostgreSQL | Conversation logs, memory audit trail, benchmark history |
 | Benchmark scoring | Custom Python scoring script (exact-match / LLM-graded correctness against ground truth) | No single standard library covers this — write your own scorer, but structure it like the field's emerging benchmarks (multi-session recall tests) |
 | Containerization | Docker Compose (API, Qdrant/Chroma, Neo4j, Postgres) | Reproducible one-command local run |

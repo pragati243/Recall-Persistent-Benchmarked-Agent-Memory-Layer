@@ -1,12 +1,17 @@
+import json
+
+from groq import BadRequestError
 from pydantic import BaseModel
 
 from .config import settings
-from .llm import get_client
+from .llm import get_client, tool_arguments
 
 _TOOL = {
-    "name": "record_entities",
-    "description": "Record entities and relationships mentioned in a memory.",
-    "input_schema": {
+    "type": "function",
+    "function": {
+        "name": "record_entities",
+        "description": "Record entities and relationships mentioned in a memory.",
+        "parameters": {
         "type": "object",
         "properties": {
             "entities": {
@@ -34,6 +39,7 @@ _TOOL = {
             },
         },
         "required": ["entities", "relationships"],
+        },
     },
 }
 
@@ -55,12 +61,33 @@ class ExtractionResult(BaseModel):
 
 
 def extract(text: str) -> ExtractionResult:
-    response = get_client().messages.create(
+    prompt = f"Extract entities and relationships from this memory:\n\n{text}"
+    try:
+        response = get_client().chat.completions.create(
+            model=settings.extraction_model,
+            max_completion_tokens=512,
+            tools=[_TOOL],
+            tool_choice={"type": "function", "function": {"name": "record_entities"}},
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return ExtractionResult(**tool_arguments(response, "record_entities"))
+    except BadRequestError as error:
+        if getattr(error, "code", None) != "tool_use_failed":
+            raise
+
+    # GPT-OSS can occasionally emit malformed function arguments. JSON mode
+    # remains structured and is normalized into the identical downstream schema.
+    response = get_client().chat.completions.create(
         model=settings.extraction_model,
-        max_tokens=512,
-        tools=[_TOOL],
-        tool_choice={"type": "tool", "name": "record_entities"},
-        messages=[{"role": "user", "content": f"Extract entities and relationships from this memory:\n\n{text}"}],
+        max_completion_tokens=512,
+        response_format={"type": "json_object"},
+        messages=[{
+            "role": "system",
+            "content": (
+                "Return only a JSON object with keys entities and relationships. "
+                "Each entity is {name, type}, where type is person, project, preference, or fact. "
+                "Each relationship is {source, target, relation}; relation is a short uppercase verb phrase."
+            ),
+        }, {"role": "user", "content": prompt}],
     )
-    tool_call = next(block for block in response.content if block.type == "tool_use")
-    return ExtractionResult(**tool_call.input)
+    return ExtractionResult(**json.loads(response.choices[0].message.content or "{}"))

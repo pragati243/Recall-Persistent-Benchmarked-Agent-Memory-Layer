@@ -1,0 +1,603 @@
+[
+  {
+    "sequence_id": "seq_01",
+    "category": "simple_recall",
+    "question": "What programming language does the user like best?",
+    "expected_answer": "Python",
+    "stale_answer": "",
+    "session_texts": [
+      "The user's favorite programming language is Python.",
+      "The user mentioned they enjoy hiking on weekends.",
+      "The user is planning a trip to Japan next spring."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user's favorite programming language is Python.",
+        "score": 0.7673402
+      },
+      {
+        "text": "The user is planning a trip to Japan next spring.",
+        "score": 0.481343
+      },
+      {
+        "text": "The user mentioned they enjoy hiking on weekends.",
+        "score": 0.45561582
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_02",
+    "category": "simple_recall",
+    "question": "What food allergy does the user have?",
+    "expected_answer": "peanuts",
+    "stale_answer": "",
+    "session_texts": [
+      "The user is allergic to peanuts.",
+      "The user works remotely from Berlin.",
+      "The user's dog is named Biscuit."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user is allergic to peanuts.",
+        "score": 0.76481
+      },
+      {
+        "text": "The user's dog is named Biscuit.",
+        "score": 0.6246181
+      },
+      {
+        "text": "The user works remotely from Berlin.",
+        "score": 0.48685706
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_03",
+    "category": "simple_recall",
+    "question": "What is the user's favorite color?",
+    "expected_answer": "teal",
+    "stale_answer": "",
+    "session_texts": [
+      "The user's favorite color is teal.",
+      "The user just started learning to play the guitar.",
+      "The user drinks black coffee every morning."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user's favorite color is teal.",
+        "score": 0.7520976
+      },
+      {
+        "text": "The user drinks black coffee every morning.",
+        "score": 0.4612922
+      },
+      {
+        "text": "The user just started learning to play the guitar.",
+        "score": 0.45521647
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_04",
+    "category": "simple_recall",
+    "question": "Which city does the user live in?",
+    "expected_answer": "Austin",
+    "stale_answer": "",
+    "session_texts": [
+      "The user lives in Austin, Texas.",
+      "The user is reading a book about ancient Rome.",
+      "The user's favorite movie genre is science fiction."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Science Fiction",
+        "type": "preference"
+      },
+      {
+        "name": "book",
+        "type": "project"
+      },
+      {
+        "name": "Austin, Texas",
+        "type": "fact"
+      },
+      {
+        "name": "ancient Rome",
+        "type": "fact"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "The user lives in Austin, Texas.",
+        "score": 0.7791302
+      },
+      {
+        "text": "The user is reading a book about ancient Rome.",
+        "score": 0.5587531
+      },
+      {
+        "text": "The user's favorite movie genre is science fiction.",
+        "score": 0.46678853
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_05",
+    "category": "simple_recall",
+    "question": "What is the name of the user's pet?",
+    "expected_answer": "Max",
+    "stale_answer": "",
+    "session_texts": [
+      "The user's dog is named Max.",
+      "The user prefers tea over coffee.",
+      "The user is training for a marathon in the fall."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user's dog is named Max.",
+        "score": 0.76644915
+      },
+      {
+        "text": "The user prefers tea over coffee.",
+        "score": 0.47523534
+      },
+      {
+        "text": "The user is training for a marathon in the fall.",
+        "score": 0.43655714
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_06",
+    "category": "simple_recall",
+    "question": "What is the user's job?",
+    "expected_answer": "backend engineer",
+    "stale_answer": "",
+    "session_texts": [
+      "The user works as a backend engineer.",
+      "The user enjoys cooking Italian food on weekends.",
+      "The user recently adopted a cat."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user works as a backend engineer.",
+        "score": 0.76085746
+      },
+      {
+        "text": "The user recently adopted a cat.",
+        "score": 0.5927683
+      },
+      {
+        "text": "The user enjoys cooking Italian food on weekends.",
+        "score": 0.5293351
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_07",
+    "category": "contradiction",
+    "question": "How does the user currently want to be notified?",
+    "expected_answer": "SMS",
+    "stale_answer": "email",
+    "session_texts": [
+      "The user prefers email notifications.",
+      "The user asked for a weekly summary of tasks.",
+      "The user now prefers SMS notifications instead of email."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user prefers email notifications.",
+        "score": 0.78110445
+      },
+      {
+        "text": "The user now prefers SMS notifications instead of email.",
+        "score": 0.7342166
+      },
+      {
+        "text": "The user asked for a weekly summary of tasks.",
+        "score": 0.62030023
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_08",
+    "category": "contradiction",
+    "question": "When does the user prefer to have meetings?",
+    "expected_answer": "afternoon",
+    "stale_answer": "morning",
+    "session_texts": [
+      "The user prefers morning meetings.",
+      "The user is working on a project called Nimbus.",
+      "The user now prefers afternoon meetings instead of mornings."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user prefers morning meetings.",
+        "score": 0.80511737
+      },
+      {
+        "text": "The user now prefers afternoon meetings instead of mornings.",
+        "score": 0.7578752
+      },
+      {
+        "text": "The user is working on a project called Nimbus.",
+        "score": 0.54119956
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_09",
+    "category": "contradiction",
+    "question": "When is the Nimbus project deadline?",
+    "expected_answer": "April 15",
+    "stale_answer": "March 1",
+    "session_texts": [
+      "The Nimbus project deadline is set for March 1st.",
+      "The user asked for reminders three days before deadlines.",
+      "The Nimbus project deadline has been moved to April 15th."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The Nimbus project deadline is set for March 1st.",
+        "score": 0.890514
+      },
+      {
+        "text": "The Nimbus project deadline has been moved to April 15th.",
+        "score": 0.8619629
+      },
+      {
+        "text": "The user asked for reminders three days before deadlines.",
+        "score": 0.5762272
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_10",
+    "category": "contradiction",
+    "question": "Which project is Maria currently assigned to?",
+    "expected_answer": "Zenith",
+    "stale_answer": "Orion",
+    "session_texts": [
+      "Maria is assigned to the Orion project.",
+      "The Orion project covers the mobile app rewrite.",
+      "Maria has been reassigned from Orion to the Zenith project."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Zenith",
+        "type": "project"
+      },
+      {
+        "name": "Orion",
+        "type": "project"
+      },
+      {
+        "name": "Maria",
+        "type": "person"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Maria is assigned to the Orion project.",
+        "score": 0.8275769
+      },
+      {
+        "text": "Maria has been reassigned from Orion to the Zenith project.",
+        "score": 0.710206
+      },
+      {
+        "text": "The Orion project covers the mobile app rewrite.",
+        "score": 0.59061337
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_11",
+    "category": "contradiction",
+    "question": "What diet does the user currently follow?",
+    "expected_answer": "vegan",
+    "stale_answer": "vegetarian",
+    "session_texts": [
+      "The user follows a vegetarian diet.",
+      "The user likes trying new restaurants on weekends.",
+      "The user has switched to a vegan diet."
+    ],
+    "mode": "vector",
+    "graph_hits": [],
+    "vector_hits": [
+      {
+        "text": "The user follows a vegetarian diet.",
+        "score": 0.73283947
+      },
+      {
+        "text": "The user has switched to a vegan diet.",
+        "score": 0.7212135
+      },
+      {
+        "text": "The user likes trying new restaurants on weekends.",
+        "score": 0.5692208
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_12",
+    "category": "contradiction",
+    "question": "Which office does the user currently work from?",
+    "expected_answer": "Denver",
+    "stale_answer": "New York",
+    "session_texts": [
+      "The user works from the New York office.",
+      "The user's badge access was renewed in January.",
+      "The user has relocated and now works from the Denver office."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Denver office",
+        "type": "fact"
+      },
+      {
+        "name": "User",
+        "type": "person"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "The user works from the New York office.",
+        "score": 0.7466246
+      },
+      {
+        "text": "The user has relocated and now works from the Denver office.",
+        "score": 0.70850825
+      },
+      {
+        "text": "The user's badge access was renewed in January.",
+        "score": 0.53734696
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_13",
+    "category": "multi_hop",
+    "question": "Who does Raj report to?",
+    "expected_answer": "Sarah",
+    "stale_answer": "",
+    "session_texts": [
+      "Sarah manages the Atlas project.",
+      "Raj is the tech lead on the Atlas project.",
+      "Atlas is expected to ship in November."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Atlas",
+        "type": "project"
+      },
+      {
+        "name": "November",
+        "type": "fact"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Raj is the tech lead on the Atlas project.",
+        "score": 0.6765691
+      },
+      {
+        "text": "Sarah manages the Atlas project.",
+        "score": 0.49006954
+      },
+      {
+        "text": "Atlas is expected to ship in November.",
+        "score": 0.37247455
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_14",
+    "category": "multi_hop",
+    "question": "Who is Tom's manager?",
+    "expected_answer": "Lena",
+    "stale_answer": "",
+    "session_texts": [
+      "Lena is the manager of the Falcon team.",
+      "Tom is a member of the Falcon team.",
+      "The Falcon team is responsible for the payments service."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Falcon team",
+        "type": "project"
+      },
+      {
+        "name": "payments service",
+        "type": "project"
+      },
+      {
+        "name": "Lena",
+        "type": "person"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Tom is a member of the Falcon team.",
+        "score": 0.7125293
+      },
+      {
+        "text": "Lena is the manager of the Falcon team.",
+        "score": 0.6076447
+      },
+      {
+        "text": "The Falcon team is responsible for the payments service.",
+        "score": 0.5198148
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_15",
+    "category": "multi_hop",
+    "question": "Which office is the Nimbus project associated with?",
+    "expected_answer": "Chicago",
+    "stale_answer": "",
+    "session_texts": [
+      "The Nimbus project is owned by the Platform group.",
+      "The Platform group is based in the Chicago office.",
+      "Elena works in the Platform group."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Platform group",
+        "type": "project"
+      },
+      {
+        "name": "Elena",
+        "type": "person"
+      },
+      {
+        "name": "Chicago office",
+        "type": "fact"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "The Nimbus project is owned by the Platform group.",
+        "score": 0.78264886
+      },
+      {
+        "text": "The Platform group is based in the Chicago office.",
+        "score": 0.59604484
+      },
+      {
+        "text": "Elena works in the Platform group.",
+        "score": 0.50076574
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_16",
+    "category": "multi_hop",
+    "question": "Which library does Omar's project depend on?",
+    "expected_answer": "Aurora",
+    "stale_answer": "",
+    "session_texts": [
+      "Omar is the tech lead for the Comet project.",
+      "The Comet project depends on the Aurora library.",
+      "The Aurora library was written by the Infra team."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Comet",
+        "type": "project"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Omar is the tech lead for the Comet project.",
+        "score": 0.65594596
+      },
+      {
+        "text": "The Comet project depends on the Aurora library.",
+        "score": 0.6385459
+      },
+      {
+        "text": "The Aurora library was written by the Infra team.",
+        "score": 0.5559871
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_17",
+    "category": "multi_hop",
+    "question": "Which team runs the initiative sponsored by Priya?",
+    "expected_answer": "Growth",
+    "stale_answer": "",
+    "session_texts": [
+      "Priya is the sponsor of the Vega initiative.",
+      "The Vega initiative is run by the Growth team.",
+      "The Growth team meets every Monday."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Vega initiative",
+        "type": "project"
+      },
+      {
+        "name": "Growth team",
+        "type": "project"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Priya is the sponsor of the Vega initiative.",
+        "score": 0.8531821
+      },
+      {
+        "text": "The Vega initiative is run by the Growth team.",
+        "score": 0.65092814
+      },
+      {
+        "text": "The Growth team meets every Monday.",
+        "score": 0.51782525
+      }
+    ]
+  },
+  {
+    "sequence_id": "seq_18",
+    "category": "multi_hop",
+    "question": "Which platform is Jordan's service part of?",
+    "expected_answer": "Payments",
+    "stale_answer": "",
+    "session_texts": [
+      "Jordan is the on-call engineer for the Billing service.",
+      "The Billing service is part of the Payments platform.",
+      "The Payments platform had an incident last week."
+    ],
+    "mode": "graph",
+    "graph_hits": [
+      {
+        "name": "Billing service",
+        "type": "project"
+      },
+      {
+        "name": "Payments platform",
+        "type": "project"
+      }
+    ],
+    "vector_hits": [
+      {
+        "text": "Jordan is the on-call engineer for the Billing service.",
+        "score": 0.7329652
+      },
+      {
+        "text": "The Billing service is part of the Payments platform.",
+        "score": 0.64653647
+      },
+      {
+        "text": "The Payments platform had an incident last week.",
+        "score": 0.5886795
+      }
+    ]
+  }
+]

@@ -33,13 +33,15 @@ def retrieve(state: AgentState) -> AgentState:
 
 
 def chat(state: AgentState) -> AgentState:
-    response = get_client().messages.create(
+    response = get_client().chat.completions.create(
         model=settings.agent_model,
-        max_tokens=512,
-        system=SYSTEM_PROMPT.format(context=state["context"]),
-        messages=state["messages"],
+        max_completion_tokens=512,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT.format(context=state["context"])},
+            *state["messages"],
+        ],
     )
-    reply = "".join(block.text for block in response.content if block.type == "text")
+    reply = response.choices[0].message.content or ""
     return {**state, "messages": [*state["messages"], {"role": "assistant", "content": reply}]}
 
 
@@ -61,9 +63,9 @@ def summarize_session(messages: list[dict]) -> str:
     spec is live mid-conversation memory writes, not a summary written once
     the session is over."""
     transcript = "\n".join(f"{m['role']}: {m['content']}" for m in messages)
-    response = get_client().messages.create(
+    response = get_client().chat.completions.create(
         model=settings.extraction_model,
-        max_tokens=200,
+        max_completion_tokens=200,
         messages=[{
             "role": "user",
             "content": (
@@ -73,4 +75,4 @@ def summarize_session(messages: list[dict]) -> str:
             ),
         }],
     )
-    return "".join(block.text for block in response.content if block.type == "text")
+    return response.choices[0].message.content or ""
